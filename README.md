@@ -10,6 +10,7 @@
 Use the power of OpenAI's ChatGPT LLM model to write, refactor, generate, and more!
 
 </h2>
+<img src="./gifs/codechat_demo.gif" alt="CodeChat Demo" style="margin-top: 20px">
 
 </div>
 
@@ -156,6 +157,11 @@ as an alternative you can also enter it into your Visual Studio Code settings.js
           "default": "Rewrite following sentence: ",
           "description": "Will try to rewrite sentences.",
           "type": "string"
+        },
+        "codechat.promptPrefix.arbitrary": {
+          "default": "Execute the following command on the given code:",
+          "description": "The prompt prefix used for sending arbitrary command to ChatGPT",
+          "type": "string"
         }
 ```
 
@@ -185,10 +191,7 @@ If you wish to set prompts based on file type, simply include the file name and 
         }
 ```
 
-# Caveats & Limitations
-
-The conversation panel may give the impression of conversing with ChatGPT, but in reality it does not. The extension relies on the official OpenAPI library to interact with the ChatGPT API, and unfortunately, this library currently lacks a conversation API. Therefore, the extension can only provide a response to the immediate question posed, and is unable to recall any previous exchanges.
-
+  
 # Disclaimer
 
 - There are no assurances that this extension will operate seamlessly and without any adverse effects. Therefore, it is recommended that you exercise caution while using it, as it may undergo modifications that are beyond our control. For instance, OpenAI may introduce unanticipated changes to some or all of its functionalities, which could potentially affect the performance of this extension.
@@ -198,6 +201,3 @@ The conversation panel may give the impression of conversing with ChatGPT, but i
 - The extension will solely gather metadata to enhance its functionalities, and it will not gather any personally identifiable information. You have the option of enabling or disabling telemetry by setting either 'telemetry.telemetryLevel' or 'codechat.telemetry.disable' to their corresponding values. The extension will only collect metadata if both of these settings have permitted telemetry.
 
 - We cannot be held responsible for any problems that may occur as a result of using this extension. It should also be noted that your use of OpenAI services is subject to OpenAI's own terms and conditions.
-
-# Credits
-- This extension was inspired by and based on [gencay/vscode-chatgpt](https://github.com/gencay/vscode-chatgpt)
